@@ -2,10 +2,10 @@ const { Client, MessageMedia } = require('whatsapp-web.js');
 const app = require('express')();
 const express = require('express');
 var qrcode = require('qrcode-terminal');
-const server = require('http').createServer(app);
+const server = require('https').createServer(app);
 const io = require('socket.io')(server, {
     cors: {
-        origin: "http://200.58.77.161:9101/",
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
@@ -170,4 +170,4 @@ function sleep(ms) {
 }
 
 
-server.listen(4500);
+server.listen(443);
